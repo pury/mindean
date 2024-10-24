@@ -1,0 +1,44 @@
+{
+  "name": "mindean",
+  "version": "1.0.0",
+  "description": "Mindean is a lightweight, open-source mind map management platform.",
+  "main": "dist/mindean.js",
+  "scripts": {
+    "start": "cross-env ENV=DEV webpack serve --open --progress --config webpack.config.dev.babel.js",
+    "build": "cross-env ENV=PROD webpack --config webpack.config.babel.js --progress --stats=errors-only",
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pury/mindean.git"
+  },
+  "keywords": [
+    "mindean",
+    "mindmap"
+  ],
+  "author": "pury <szwzjx@163.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/pury/mindean/issues"
+  },
+  "homepage": "https://github.com/pury/mindean#readme",
+  "devDependencies": {
+    "@babel/core": "^7.25.9",
+    "@babel/preset-env": "^7.25.9",
+    "@babel/register": "^7.25.9",
+    "babel-loader": "^9.2.1",
+    "babel-plugin-import": "^1.13.8",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.6.3",
+    "react-hot-loader": "^4.13.1",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.0.0-rc.1"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.25.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
