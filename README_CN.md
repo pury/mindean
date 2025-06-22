@@ -1,12 +1,12 @@
 # Mindean
 
-> A lightweight, open-source mind map management platform.
+> 一个轻量级的开源思维导图管理平台。
 
 [Mindean](https://www.mindean.com) | [Converter](https://www.mindean.com/convert) | [Documentation](https://www.mindean.com/docs/)
 
-## Converter List
+## 转换器列表
 
-| Type | Name | 
+| 类型 | 名称 | 
 |------|------|
 | `json` | JSON |
 | `csv` | CSV |
@@ -37,12 +37,11 @@
 | `webp` | WEBP |
 | `gif` | GIF |
 
+## 许可证
 
-## License
+MIT License - 详见 [LICENSE](LICENSE) 文件
 
-MIT License - See the [LICENSE](LICENSE) file for details
+## 联系方式
 
-## Contact
-
-- Project Homepage: [GitHub Repository](https://github.com/pury/mindean)
-- Issue Tracking: [Issues](https://github.com/pury/mindean/issues)
+- 项目主页: [GitHub Repository](https://github.com/pury/mindean)
+- 问题反馈: [Issues](https://github.com/pury/mindean/issues)
