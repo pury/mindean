@@ -4,38 +4,44 @@
 
 [Mindean](https://www.mindean.com) | [Converter](https://www.mindean.com/convert) | [Documentation](https://www.mindean.com/docs/)
 
-## 转换器列表
+## 格式支持
 
-| 类型 | 名称 | 
-|------|------|
-| `json` | JSON |
-| `csv` | CSV |
-| `markdown` |  Markdown |
-| `excel` | Excel |
-| `word` | Word |
-| `pdf` | PDF |
-| `txt` | TXT |
-| `freemind` | FreeMind |
-| `gitmind` | GitMind |
-| `jsmind` | jsMind |
-| `kityminder` | KityMinder‌ |
-| `mindline` | MindLine |
-| `mindmanager` | MindManager |
-| `mindmaster` | MindMaster |
-| `mindnode` | MindNode |
-| `mubu` | 幕布 |
-| `processon` | ProcessOn |
-| `treemind` | TreeMind |
-| `xmind` | Xmind |
-| `xunjie` | 迅捷 |
-| `yinxiang` | 印象笔记 |
-| `zhixi` | 知犀 |
-| `jpg` | JPG |
-| `png` | PNG |
-| `svg` | SVG |
-| `ico` | ICO |
-| `webp` | WEBP |
-| `gif` | GIF |
+| 类型 | 名称 | 输入 | 输出 |
+| :--- | :--- | :--- | :--- |
+| markdown | Markdown | ✅ | ✅ |
+| json | JSON | ✅ | ✅ |
+| opml | OPML | ✅ | ✅ |
+| word | Word | ⏳ | ✅ |
+| excel | Excel | ⏳ | ✅ |
+| ppt | PPT | ⏳ | ⏳ |
+| csv | CSV | ✅ | ✅ |
+| txt | TXT | ⏳ | ✅ |
+| nrdstudio | NRD Studio | ⏳ | ⏳ |
+| xmind | Xmind | ✅ | ✅ |
+| processon | Processon | ✅ | ✅ |
+| gitmind | Gitmind | ✅ | ✅ |
+| mubu | 幕布 | ⏳ | ✅ |
+| freemind | Freemind | ✅ | ✅ |
+| mindnode | MindNode | ⏳ | ✅ |
+| kityminder | 百度脑图 | ⏳ | ✅ |
+| jsmind | jsMind | ✅ | ✅ |
+| yinxiang | 印象笔记 | ✅ | ✅ |
+| xunjie | 迅捷画图 | ⏳ | ✅ |
+| treemind | TreeMind | ✅ | ✅ |
+| zhixi | 知犀 | ✅ | ✅ |
+| mindmaster | MindMaster | ⏳ | ✅ |
+| mindline | MindLine | ⏳ | ✅ |
+| mindmanager | MindManager | ✅ | ✅ |
+| pdf | PDF | ⏳ | ⏳ |
+| jpg | JPG | - | ⏳ |
+| png | PNG | - | ⏳ |
+| webp | WEBP | - | ⏳ |
+| ico | ICO | - | ⏳ |
+| gif | GIF | - | ⏳ |
+| svg | SVG | - | ⏳ |
+| rtf | RTF | ⏳ | ⏳ |
+| textbundle | TextBundle  | ⏳ | ⏳ |
+| TextPack | TextPack | ⏳ | ⏳ |
 
 ## 许可证
 

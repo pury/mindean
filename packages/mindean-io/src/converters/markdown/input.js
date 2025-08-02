@@ -1,15 +1,38 @@
-// import '../../libs/markmap-lib.0.15';
 import { Transformer } from 'markmap-lib';
 import TreeNode from '../../core/data/TreeNode';
 import { readFile, isFile } from '../../utils/file-resolver';
 
 /**
+ * Decode node content.
+ */
+function decodeNode(node) {
+    if (!node) return;
+
+    if (node.content && typeof node.content === 'string') {
+        node.content = node.content.replace(/&#x([0-9a-fA-F]+);/g,
+            (_, hex) => String.fromCharCode(parseInt(hex, 16)));
+    }
+
+    if (node.children && Array.isArray(node.children)) {
+        for (const child of node.children) {
+            decodeNode(child);
+        }
+    }
+
+    if (node.table && Array.isArray(node.table.children)) {
+        for (const row of node.table.children) {
+            decodeNode(row);
+        }
+    }
+}
+  
+/**
  * Build tree structure from markdown content.
  */
 function build(content) {  
-    // const { Transformer } = global.window.markmap;
     const transformer = new Transformer();
 	const { root } = transformer.transform(content);
+	decodeNode(root);
 
 	function traverse(node) {  
 		const treeNode = new TreeNode({

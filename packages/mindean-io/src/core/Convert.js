@@ -7,6 +7,7 @@ import * as fr from '../utils/file-resolver';
  */
 export default class Convert {
 	store;
+	mindmapConfig;
     // theme;
     // plugin;
     // converter;
@@ -23,7 +24,7 @@ export default class Convert {
 	 * Initialize the Convert instance.
 	 */
 	constructor() {
-		//
+		this.mindmapConfig = JSON.parse(JSON.stringify(config.mindmap));
 	}
 
 	// init() {
@@ -38,10 +39,10 @@ export default class Convert {
 	/**
 	 * Execute conversion from source format to target format.
 	 */
-	exec(options) {
+	process(options) {
 		return new Promise(async(resolve, reject) => { 
 			const { source, target } = options;
-			const targetConfigData = config.mindmap.filter(item => item.type === target.type)[0];
+			const targetConfigData = this.mindmapConfig.filter(item => item.type === target.type)[0];
 
 			if (!targetConfigData) return reject(null);
 
@@ -49,7 +50,6 @@ export default class Convert {
 				const sourceConverter = await import('../converters/' + source.type + '/input');
 				const sourceData = await sourceConverter.default(options);
 
-				// TODO: The source data after mounting the processing theme.
 				options.sourceData = sourceData;
 
 				this.store = new Store();
@@ -62,7 +62,7 @@ export default class Convert {
 					let suffix = targetConfigData.suffix.split(',')[0];
 
 					if (subtype) {
-						const subConfigData = config.mindmap.filter(item => item.type === subtype)[0];
+						const subConfigData = this.mindmapConfig.filter(item => item.type === subtype)[0];
 
 						if (subConfigData) {
 							suffix = subConfigData.suffix.split(',')[0];
@@ -83,5 +83,33 @@ export default class Convert {
 				reject(e);
 			}
 		});
+	}
+
+	/**
+	 * Get the input format by file.
+	 * @param {File | string} fileData - The file data.
+	 * @returns {object} - The input format.
+	 */
+	getInputFormatByFile(fileData) {
+		if (!fileData) return null;
+
+		const suffix = fr.getFileSuffix(fileData);
+		return this.mindmapConfig.filter(item => item.suffix.includes(suffix) && item.input === 'yes')[0];
+	}
+
+	/**
+	 * Get the input formats.
+	 * @returns {array} - The input formats.
+	 */
+	getInputFormats() {
+		return this.mindmapConfig.filter(item => item.input === 'yes');
+	}
+
+	/**
+	 * Get the output formats.
+	 * @returns {array} - The output formats.
+	 */
+	getOutputFormats() {
+		return this.mindmapConfig.filter(item => item.output === 'yes');
 	}
 }

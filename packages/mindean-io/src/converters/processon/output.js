@@ -24,9 +24,9 @@ const build = (storeData) => {
             treeNode.parent = parent; 
         }
         else {
-            // 根节点
-            treeNode.theme = 'bg_caihong'; // 可选
-            treeNode.structure = 'mind_free'; // 必选
+            // Root node
+            treeNode.theme = 'bg_caihong'; // Optional
+            treeNode.structure = 'mind_free'; // Required
         }
 
         if (node.children && node.children.length) {  

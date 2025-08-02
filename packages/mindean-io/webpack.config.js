@@ -9,9 +9,11 @@ module.exports = {
 	entry: './src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
+		chunkFilename: '[name].[contenthash:5].js',
 		filename: 'index.js',
-		library: 'MindeanIO',
+		library: 'mindean',
 		libraryTarget: 'umd',
+		libraryExport: 'default',
 		clean: true,
 	},
 	module: {
@@ -31,4 +33,12 @@ module.exports = {
 	externals: {
 		lodash: 'lodash',
 	},
+	optimization: {
+		minimize: true,
+		minimizer: [
+			new(require('terser-webpack-plugin'))({ 
+				extractComments: false, 
+			}),
+		],
+	}
 }; 

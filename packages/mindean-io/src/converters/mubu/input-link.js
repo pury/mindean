@@ -17,7 +17,7 @@ function build(content) {
 }  
 
 /**
- * 幕布分享链接数据解析器
+ * Mubu share link data parser.
  */
 export default (options) => {
     return new Promise((resolve, reject) => { 

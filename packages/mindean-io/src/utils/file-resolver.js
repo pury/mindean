@@ -7,12 +7,15 @@ export const isFile = obj => {
 
 /**
  * Get file extension - basic file type detection.
+ * @param {File | string} fileData - The file data.
+ * @param {boolean} lowerCase - Whether to convert to lowercase.
+ * @returns {string} - The file suffix.
  */
-export const getFileSuffix = (fileData, lower = true) => {
-    const fileName = fileData.name;
+export const getFileSuffix = (fileData, lowerCase = true) => {
+    const fileName = isFile(fileData) ? fileData.name : fileData;
     const index = fileName.lastIndexOf('.');
     const suffix = '.' + fileName.substring(index + 1);
-    return lower ? suffix.toLowerCase() : suffix;
+    return lowerCase ? suffix.toLowerCase() : suffix;
 }
 
 /**
